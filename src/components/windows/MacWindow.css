@@ -1,0 +1,83 @@
+.window{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 1rem;
+    color: rgba(230, 232, 235, 0.92);
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 34%),
+        linear-gradient(180deg, rgba(44, 46, 58, 0.96), rgba(16, 17, 24, 0.98));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 1.25rem 3rem rgba(8, 10, 18, 0.38),
+        0 0.35rem 0.9rem rgba(0, 0, 0, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px) saturate(135%);
+}
+
+.window .nav{
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 0.9rem;
+    cursor: move;
+    background: linear-gradient(180deg, rgba(248, 248, 250, 0.12), rgba(255, 255, 255, 0.02));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    user-select: none;
+    cursor: default;
+}
+
+.nav .dots{
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.nav .dot{
+    width: 0.78rem;
+    height: 0.78rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+}
+
+.nav .red{
+    background: linear-gradient(180deg, #ff7a72, #ff5f57);
+}
+
+.nav .yellow{
+    background: linear-gradient(180deg, #ffd86b, #febc2e);
+}
+
+.nav .green{
+    background: linear-gradient(180deg, #59d96f, #28c840);
+}
+
+.nav .title{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-right: 3rem;
+    text-align: center;
+}
+
+.nav .title p{
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: rgba(241, 243, 246, 0.72);
+    text-transform: lowercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.window .main-content{
+    flex: 1;
+    overflow: hidden;
+}

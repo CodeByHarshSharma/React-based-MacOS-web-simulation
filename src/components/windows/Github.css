@@ -1,0 +1,68 @@
+.cards{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    box-sizing: border-box;
+    padding: .7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .9rem;
+    justify-content: center;
+    padding-bottom: 3rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.cards::-webkit-scrollbar{
+    display: none;
+}
+
+.cards .card{
+    max-width: 20rem;
+    padding: 1rem 1rem;
+    background-color: #1c1c1c;
+    border-radius: .5rem;
+    color: rgb(218, 216, 216);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.card img{
+    width: 100%;
+}
+
+.card h1{
+    font-size: 1.2rem;
+}
+
+.card .desc{
+    opacity: .7;
+    font-size: .8rem;
+    line-height: 1.1rem;
+}
+
+.card .tags{
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.card .tags .tag{
+    background-color: rgb(57, 51, 75);
+    width: fit-content;
+    padding: .3rem .5rem;
+    border-radius: .4rem;
+    border: 1px solid whitesmoke;
+}
+
+.card .urls{
+    display: flex;
+    gap: .5rem;
+    justify-content: space-between;
+}
+
+.urls a{
+    color: whitesmoke;
+    text-decoration: none;
+}

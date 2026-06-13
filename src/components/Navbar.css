@@ -19,7 +19,7 @@ nav{
 
 nav p{
     font-size: .8rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: system-ui, 'Segoe UI', sans-serif;
     line-height: 1;
 }
 
@@ -41,7 +41,7 @@ nav .wifi-icon{
 
 nav .nav-item{
     padding: 0 .45rem;
-    transition: background-color 150ms ease;
+    transition: 150ms ease;
     cursor: pointer
 }
 
