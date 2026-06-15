@@ -2,6 +2,7 @@ import React from 'react'
 import MacWindow from './MacWindow'
 import './Resume.css'
 
+const base = import.meta.env.BASE_URL;
 const Resume = ({windowName, setWindowState, bringWindowToFront, zIndex}) => {
   return (
     <div>
@@ -12,7 +13,7 @@ const Resume = ({windowName, setWindowState, bringWindowToFront, zIndex}) => {
         zIndex={zIndex}
       >
         <div className="resume-window">
-            <embed src='/Harsh_Sharma_Resume.pdf' frameBorder='0'></embed>
+            <embed src={base + "/Harsh_Sharma_Resume.pdf"} frameBorder='0'></embed>
         </div>
       </MacWindow>
     </div>
