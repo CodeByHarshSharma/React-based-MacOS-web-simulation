@@ -1,0 +1,22 @@
+.cli-window{
+    height: 100%;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: 2rem;
+}
+
+.cli-window::-webkit-scrollbar{
+    display: none;
+}
+
+.cli-window div[name="react-console-emulator"]{
+    height: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    background-color: transparent !important;
+}
+
+.cli-window div[name="react-console-emulator"]::-webkit-scrollbar{
+    display: none;
+}

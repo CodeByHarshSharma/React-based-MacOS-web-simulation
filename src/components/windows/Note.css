@@ -1,0 +1,21 @@
+.note-window{
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* padding: 1rem; */
+    padding-bottom: 3rem;
+    font-size: .9rem;
+}
+
+.note-window pre{
+    background-color: transparent !important;
+    overflow-x: hidden !important;
+}
+
+.note-window code{
+    white-space: pre-wrap !important;
+}
+
+.note-window::-webkit-scrollbar{
+    display: none;
+}

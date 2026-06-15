@@ -1,47 +1,47 @@
 [
   {
     "id": 1,
-    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000",
-    "title": "Scheds - A Course Schedule Generator",
-    "description": "My proudest project yet, a comprehensive course schedule generator application built with ASP.NET Core MVC.",
-    "tags": ["ASP.NET Core", "C#", "Entity Framework", "SQL Server", "Bootstrap", "jQuery"],
-    "repoLink": "https://github.com/microsoft/dotnet",
-    "demoLink": "https://dotnet.microsoft.com/"
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+    "title": "Productivity Dashboard using DOM",
+    "description": "An HTML5, CSS3 and JavaScript DOM project loaded with interactivity features for tracking and managing daily productivity.",
+    "tags": ["HTML5", "CSS3", "JavaScript", "DOM"],
+    "repoLink": "https://github.com/CodeByHarshSharma/Productivity-Dashboard-using-DOM",
+    "demoLink": "https://codebyharshsharma.github.io/Productivity-Dashboard-using-DOM/"
   },
   {
     "id": 2,
-    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
-    "title": "FinTrack - Personal Finance Dashboard",
-    "description": "A real-time finance tracker that visualizes spending habits using interactive charts and connects to banking APIs.",
-    "tags": ["React", "TypeScript", "Chart.js", "Node.js", "Express", "MongoDB"],
-    "repoLink": "https://github.com/facebook/react",
-    "demoLink": "https://react.dev/"
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000",
+    "title": "Premier Behance Clone",
+    "description": "An HTML5, CSS3 and Bootstrap 5 based clone website, fully loaded with various assets such as images, videos, and various font styles.",
+    "tags": ["HTML5", "CSS3", "Bootstrap 5"],
+    "repoLink": "https://github.com/CodeByHarshSharma/premier-behance-clone",
+    "demoLink": "https://dashing-gumdrop-023197.netlify.app/"
   },
   {
     "id": 3,
-    "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=1000",
-    "title": "SecureAuth - Backend Identity Service",
-    "description": "A robust backend authentication microservice featuring JWT implementation, role-based access control, and OAuth2 integration.",
-    "tags": ["Python", "Django", "PostgreSQL", "Docker", "Redis", "JWT"],
-    "repoLink": "https://github.com/django/django",
-    "demoLink": null
+    "image": "https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&q=80&w=1000",
+    "title": "Responsive Login & SignUp Page",
+    "description": "An HTML5, CSS3 and JavaScript based responsive webpage, loaded with toggle animations for each section.",
+    "tags": ["HTML5", "CSS3", "JavaScript"],
+    "repoLink": "https://github.com/CodeByHarshSharma/Responsive-Login-SignUp-Page",
+    "demoLink": "https://login-signup-code.netlify.app/"
   },
   {
     "id": 4,
-    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1000",
-    "title": "ChatStream - Real-time Messaging App",
-    "description": "A lightweight chat application allowing users to create rooms and message instantly. Optimized for low latency communication.",
-    "tags": ["Vue.js", "Firebase", "Tailwind CSS", "Socket.io"],
-    "repoLink": "https://github.com/vuejs/core",
-    "demoLink": "https://vuejs.org/"
+    "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=1000",
+    "title": "Super Image Resolution using GANs",
+    "description": "A deep learning project exploring Generative Adversarial Networks (GANs) to upscale and enhance low-resolution images.",
+    "tags": ["Python", "Jupyter Notebook", "GANs", "Deep Learning"],
+    "repoLink": "https://github.com/CodeByHarshSharma/Super-Image-Resolution-using-GANs",
+    "demoLink": null
   },
   {
     "id": 5,
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000",
-    "title": "TerminalX - CLI Productivity Tool",
-    "description": "A command-line interface tool built to automate repetitive developer tasks and manage local environments efficiently.",
-    "tags": ["Rust", "Clap", "Tokio", "System API"],
-    "repoLink": "https://github.com/rust-lang/rust",
+    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1000",
+    "title": "Frontend Mini Projects",
+    "description": "A collection of small UI/UX effects and interactive components built using HTML, CSS, and JavaScript.",
+    "tags": ["HTML", "CSS", "JavaScript", "UI/UX"],
+    "repoLink": "https://github.com/CodeByHarshSharma/Frontend-mini-projects",
     "demoLink": null
   }
 ]

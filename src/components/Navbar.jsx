@@ -2,7 +2,7 @@ import React from 'react'
 import './Navbar.css'
 import DateTime from './DateTime.jsx'
 
-const Navbar = () => {
+const Navbar = ({ openWindow }) => {
   return (
     <nav>
         <div className="left">
@@ -13,13 +13,13 @@ const Navbar = () => {
             <div className="nav-item">
                 <p>Harsh Sharma</p>
             </div>
-            <div className="nav-item">
+            <div onClick={() => openWindow('resume')} className="nav-item">
                 <p>File</p>
             </div>
-            <div className="nav-item">
+            <div onClick={() => openWindow('github')} className="nav-item">
                 <p>Window</p>
             </div>
-            <div className="nav-item">
+            <div onClick={() => openWindow('cli')} className="nav-item">
                 <p>Terminal</p>
             </div>
 
@@ -29,8 +29,8 @@ const Navbar = () => {
                 <img src="./nav-icons/wifi.svg" alt="WiFi"/>
             </div>
 
-            <div className="nav-item">
-                <DateTime />
+            <div onClick={() => {window.open("https://calendar.google.com/", "_blank")}} className="nav-item">
+                <DateTime  />
             </div>
         </div>
     </nav>

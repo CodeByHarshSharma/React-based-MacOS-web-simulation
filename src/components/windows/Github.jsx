@@ -16,17 +16,21 @@ const GitCard = ({data = {id:1, image:"", title:"", description:"", tags:[], rep
 
         <div className="urls">
 
-            <a href={data.repoLink}>Repository</a>
-            {data.demoLink && <a href={data.demoLink}>Demo Link</a>}
+            <a target='_blank' href={data.repoLink}>Repository</a>
+            {data.demoLink && <a target='_blank'href={data.demoLink}>Demo Link</a>}
         </div>
     </div>
 }
 
-
-const Github = () => {
+const Github = ({windowName, setWindowState, bringWindowToFront, zIndex}) => {
   return (
     <div>
-      <MacWindow>
+      <MacWindow
+        windowName={windowName}
+        setWindowState={setWindowState}
+        bringWindowToFront={bringWindowToFront}
+        zIndex={zIndex}
+      >
         <div className="cards">
             {GithubData.map(project => {
                 return <GitCard data={project} />

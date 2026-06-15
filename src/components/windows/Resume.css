@@ -1,0 +1,10 @@
+.resume-window{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.resume-window embed{
+    height: 100%;
+    width: 100%;
+}

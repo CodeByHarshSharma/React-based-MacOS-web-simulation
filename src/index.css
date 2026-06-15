@@ -15,4 +15,6 @@ main{
   background-image: url('./BG_Image.jpg');
   background-size: cover;
   background-position: center;
+  overflow: hidden; 
+  position: relative;
 }
