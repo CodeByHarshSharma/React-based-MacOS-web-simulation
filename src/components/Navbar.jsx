@@ -30,7 +30,7 @@ const Navbar = ({ openWindow }) => {
             </div>
 
             <div onClick={() => {window.open("https://calendar.google.com/", "_blank")}} className="nav-item">
-                <DateTime  />
+                <DateTime  /> 
             </div>
         </div>
     </nav>
