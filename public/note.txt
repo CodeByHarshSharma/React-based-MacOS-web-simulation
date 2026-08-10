@@ -18,11 +18,11 @@ const TECH_STACK = {
   ],
   backend: [
     "Node.js",     // 90%
-    "PostgreSQL",  // 85%
+    "Mongoose",    // 85%
     "Express.js",  // 75%
     "Docker",      // 80%
   ],
-  tools: ["AWS", "Git", "Figma", "Linux"]
+  tools: ["MongoDB", "Git", "Figma", "Postman"]
 };
 
 // --------------------------------------------------
@@ -78,36 +78,12 @@ class Projects {
 
 }
 
-// --------------------------------------------------
-// 3. COMPETITIVE ACHIEVEMENTS
-// --------------------------------------------------
-
-interface HackathonWin {
-  rank: number;
-  event: string;
-  project: string;
-}
-
-const trophyCabinet: HackathonWin[] = [
-  {
-    rank: 1,
-    event: "Global AI Hackathon 2024",
-    project: "EcoVision (Computer Vision Waste Segregation)",
-    // Prize: $5,000
-  },
-  {
-    rank: 500, // Top 500 Global
-    event: "Google Code Jam 2023",
-    project: "Algorithm Optimization (Dynamic Programming)",
-  }
-];
 
 // --------------------------------------------------
 // 4. ACADEMIC BACKGROUND
 // --------------------------------------------------
 
 const education = new Map<string, string>([
-  ["Mother Khazani Convent School", "12th - CBSE Board (7 GPA)"],
   ["GNIOT", "B.Tech CSE-AI (7 CGPA)"]
 ]);
 

@@ -11,11 +11,11 @@
   {
     "id": 2,
     "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=1000",
-    "title": "Premier Behance Clone",
-    "description": "An HTML5, CSS3 and Bootstrap 5 based clone website, fully loaded with various assets such as images, videos, and various font styles.",
-    "tags": ["HTML5", "CSS3", "Bootstrap 5"],
-    "repoLink": "https://github.com/CodeByHarshSharma/premier-behance-clone",
-    "demoLink": "https://dashing-gumdrop-023197.netlify.app/"
+    "title": "Finite",
+    "description": "Finite is a text and image content only website which reduces addictive content consumption",
+    "tags": ["ReactJS", "CSS3", "ExpressJS", "MongoDB"],
+    "repoLink": "https://github.com/CodeByHarshSharma/Finite",
+    "demoLink": "https://insta-clone-szma.onrender.com"
   },
   {
     "id": 3,

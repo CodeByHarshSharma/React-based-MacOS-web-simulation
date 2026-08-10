@@ -6,6 +6,7 @@ import Note from './components/windows/Note.jsx'
 import Resume from './components/windows/Resume.jsx'
 import Spotify from './components/windows/Spotify.jsx'
 import Cli from './components/windows/Cli.jsx'
+import Hero from './components/Hero.jsx'
 
 const windowNames = ['github', 'resume', 'note', 'spotify', 'cli']
 
@@ -74,6 +75,7 @@ const App = () => {
             zIndex={getWindowZIndex('cli')}
           />
         )}
+        <Hero />
         <Dock openWindow={openWindow} />
       </main>
     

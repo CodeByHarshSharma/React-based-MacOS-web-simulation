@@ -1,0 +1,154 @@
+:root {
+    --bg: #07070F;
+    --text: #F0EDE6;
+    --muted: #6E6E9A;
+    --m2: #3A3A60;
+    --line: #1C1C35;
+    --or: #1f8fff;
+    --fd: 'Syne', sans-serif;
+    --fb: 'DM Sans', sans-serif;
+    --fm: 'JetBrains Mono', monospace;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--fb);
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    height: 100svh;
+    overflow: hidden;
+}
+
+
+/* Three.js Canvas */
+
+#hc {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+
+/* Mobile fallback text */
+
+.hfb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    font-family: var(--fd);
+    font-size: clamp(56px, 16vw, 106px);
+    font-weight: 800;
+    letter-spacing: -.025em;
+    line-height: .92;
+    text-align: center;
+    opacity: 0;
+    z-index: 10;
+    background:
+        linear-gradient(170deg,
+            #fff 0%,
+            var(--or) 120%);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Description */
+
+.hsub {
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    text-align: center;
+    padding: 0 5vw;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+
+.hrole {
+    font-size: clamp(15px, 1.5vw, 18px);
+    color: var(--text);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+.hrole strong {
+    color: var(--text);
+    font-weight: 500;
+}
+
+
+
+@keyframes scrollDot {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(5px);
+        opacity: .3;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 767px) {
+
+    .hsub {
+        bottom: 80px;
+    }
+
+    .hlinks {
+        gap: 12px 18px;
+    }
+
+}
+
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+}
