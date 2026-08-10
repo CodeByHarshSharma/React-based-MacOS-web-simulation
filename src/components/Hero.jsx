@@ -61,7 +61,7 @@ const Hero = () => {
             const FONT_SIZE = 136 * SS;
             const LINE_HEIGHT = 154 * SS;
             const TEXT_PADDING = 100 * SS;
-            const TEXT_LINES = ['MacOS'];
+            const TEXT_LINES = ['ArcOS'];
 
             const measureCanvas = document.createElement('canvas');
             const measureCtx = measureCanvas.getContext('2d');
