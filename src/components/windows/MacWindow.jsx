@@ -2,14 +2,14 @@ import React from 'react'
 import { Rnd } from 'react-rnd'
 import './MacWindow.css'
 
-const MacWindow = ({ children, height = "50vh", width = "55vw", windowName, setWindowState, bringWindowToFront, zIndex = 1 }) => {
+const MacWindow = ({ children, height = "55vh", width = "55vw", windowName, setWindowState, bringWindowToFront, zIndex = 1 }) => {
   return (
     <div>
       <Rnd default={{
         width: width,
         height: height,
-        x: 200,
-        y: 100
+        x: 300,
+        y: 0
       }}
         style={{ zIndex }} onMouseDown={() => bringWindowToFront(windowName)} onDragStart={() => bringWindowToFront(windowName)} onResizeStart={() => bringWindowToFront(windowName)}>
         <div className="window">

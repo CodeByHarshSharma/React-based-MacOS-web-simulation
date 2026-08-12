@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
 import * as THREE from 'three'
 import './hero.css'
 
@@ -10,11 +9,8 @@ const Hero = () => {
         const REDUCED = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
         const MOBILE = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
 
-        gsap.registerPlugin(ScrollTrigger);
-
         let rafId = null;
         let cancelled = false;
-        let scrollTrigger = null;
         let mouseMoveHandler = null;
         let mouseLeaveHandler = null;
         let resizeHandler = null;
@@ -42,8 +38,8 @@ const Hero = () => {
             if (cancelled) return;
 
             /* ── THREE.JS SETUP ───────────────────────────────────────── */
-            const W = heroEl.clientWidth;
-            const H = heroEl.clientHeight;
+            let W = heroEl.clientWidth;
+            let H = heroEl.clientHeight;
 
             const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
             renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -114,7 +110,7 @@ const Hero = () => {
             const HALF_HEIGHT = 2;
             const HALF_WIDTH = HALF_HEIGHT * aspect;
             const FRUSTUM_HALF_HEIGHT = camera.position.z * Math.tan(25 * Math.PI / 180);
-            const FRUSTUM_HALF_WIDTH = FRUSTUM_HALF_HEIGHT * aspect;
+            let FRUSTUM_HALF_WIDTH = FRUSTUM_HALF_HEIGHT * aspect;
 
             const target = new Float32Array(N * 3);
             const source = new Float32Array(N * 3);
@@ -139,8 +135,6 @@ const Hero = () => {
                 source[i * 3 + 1] = current[i * 3 + 1] = Math.sin(angle) * radius;
                 source[i * 3 + 2] = current[i * 3 + 2] = (Math.random() - 0.5) * 12;
 
-                // Orange → white gradient
-                const t = py / OH;
                 colors[i * 3] = 0.12;
                 colors[i * 3 + 1] = 0.55;
                 colors[i * 3 + 2] = 1.0;
@@ -207,43 +201,30 @@ const Hero = () => {
 
             /* ── MOUSE INTERACTION ────────────────────────────────────── */
             const mouse = { x: -9999, y: -9999 };
-            const cameraTarget = { x: 0, y: 0 };
 
             mouseMoveHandler = e => {
-                const nx = (e.clientX / W) * 2 - 1;
-                const ny = -(e.clientY / H) * 2 + 1;
+                const rect = heroEl.getBoundingClientRect();
+                const nx = ((e.clientX - rect.left) / W) * 2 - 1;
+                const ny = -((e.clientY - rect.top) / H) * 2 + 1;
 
                 mouse.x = nx * FRUSTUM_HALF_WIDTH;
                 mouse.y = ny * FRUSTUM_HALF_HEIGHT;
-
-                cameraTarget.x = nx * 0.22;
-                cameraTarget.y = ny * 0.16;
             };
             document.addEventListener('mousemove', mouseMoveHandler);
 
             mouseLeaveHandler = () => {
                 mouse.x = -9999; mouse.y = -9999;
-                cameraTarget.x = 0; cameraTarget.y = 0;
             };
             heroEl.addEventListener('mouseleave', mouseLeaveHandler);
 
-            /* ── SCROLL FADE ──────────────────────────────────────────── */
-            scrollTrigger = ScrollTrigger.create({
-                trigger: heroEl,
-                start: 'top top',
-                end: 'bottom top',
-                onUpdate(self) {
-                    material.opacity = Math.max(0, 0.92 - self.progress * 2.2);
-                },
-            });
-
             /* ── RESIZE ───────────────────────────────────────────────── */
             resizeHandler = () => {
-                const width = heroEl.clientWidth;
-                const height = heroEl.clientHeight;
-                renderer.setSize(width, height);
-                camera.aspect = width / height;
+                W = heroEl.clientWidth;
+                H = heroEl.clientHeight;
+                renderer.setSize(W, H);
+                camera.aspect = W / H;
                 camera.updateProjectionMatrix();
+                FRUSTUM_HALF_WIDTH = FRUSTUM_HALF_HEIGHT * camera.aspect;
             };
             window.addEventListener('resize', resizeHandler);
 
@@ -261,9 +242,6 @@ const Hero = () => {
                 const dt = Math.min((timestamp - lastTime) / 1000, 0.05);
                 elapsed += dt;
                 lastTime = timestamp;
-
-                // Camera parallax
-
 
                 // Mouse repulsion
                 if (state.assembled && !REDUCED) {
@@ -305,7 +283,6 @@ const Hero = () => {
             if (mouseMoveHandler) document.removeEventListener('mousemove', mouseMoveHandler);
             if (heroEl && mouseLeaveHandler) heroEl.removeEventListener('mouseleave', mouseLeaveHandler);
             if (resizeHandler) window.removeEventListener('resize', resizeHandler);
-            if (scrollTrigger) scrollTrigger.kill();
             if (tweenTargets.length) gsap.killTweensOf(tweenTargets);
         };
     }, []);
