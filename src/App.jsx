@@ -6,9 +6,10 @@ import Note from './components/windows/Note.jsx'
 import Resume from './components/windows/Resume.jsx'
 import Spotify from './components/windows/Spotify.jsx'
 import Cli from './components/windows/Cli.jsx'
+import Calendar from './components/windows/Calendar.jsx'
 import Hero from './components/Hero.jsx'
 
-const windowNames = ['github', 'resume', 'note', 'spotify', 'cli']
+const windowNames = ['github', 'resume', 'note', 'spotify', 'cli', 'calendar']
 
 const App = () => {
   const [windowState, setWindowState] = useState({
@@ -16,7 +17,8 @@ const App = () => {
     note: false,
     resume: false,
     spotify: false,
-    cli: false
+    cli: false,
+    calendar: false
   })
 
   const [windowOrder, setWindowOrder] = useState(windowNames)
@@ -65,6 +67,14 @@ const App = () => {
             setWindowState={setWindowState}
             bringWindowToFront={bringWindowToFront}
             zIndex={getWindowZIndex('spotify')}
+          />
+        )}
+        {windowState.calendar && (
+          <Calendar
+            windowName="calendar"
+            setWindowState={setWindowState}
+            bringWindowToFront={bringWindowToFront}
+            zIndex={getWindowZIndex('calendar')}
           />
         )}
         {windowState.cli && (
