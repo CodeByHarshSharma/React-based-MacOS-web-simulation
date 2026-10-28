@@ -9,7 +9,7 @@ import Calendar from './components/windows/Calendar.jsx'
 import Cli from './components/windows/Cli.jsx'
 import Hero from './components/Hero.jsx'
 
-const windowNames = ['github', 'resume', 'note', 'spotify', 'cli']
+const windowNames = ['github', 'resume', 'note', 'spotify', 'calendar', 'cli']
 
 const App = () => {
   const [windowState, setWindowState] = useState({
