@@ -18,7 +18,7 @@ const Dock = ({openWindow}) => {
         
         <div onClick={() => {openWindow('spotify')}} className='icon spotify'><img src={Base + "/doc-icons/spotify.svg"} alt="" /></div>
         
-        <div onClick={() => {window.open("https://calendar.google.com/", "_blank")}} className='icon calender'><img src={Base + "/doc-icons/calender.svg"} alt="" /></div>
+        <div onClick={() => {openWindow('calendar')}} className='icon calender'><img src={Base + "/doc-icons/calender.svg"} alt="" /></div>
         
         <div onClick={() => {openWindow('cli')}} className='icon cli'><img src={Base + "/doc-icons/cli.svg"} alt="" /></div>
     </footer>
