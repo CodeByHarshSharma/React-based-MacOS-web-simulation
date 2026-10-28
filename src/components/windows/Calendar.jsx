@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import MacWindow from './MacWindow'
 import './Calendar.css'
 
@@ -54,11 +54,24 @@ const Calendar = ({ windowName, setWindowState, bringWindowToFront, zIndex }) =>
   const [category, setCategory] = useState('personal')
   const [notes, setNotes] = useState('')
   const [query, setQuery] = useState('')
+  const searchInputRef = useRef(null)
   const [view, setView] = useState('month')
 
   useEffect(() => {
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(events)) } catch { /* storage can be unavailable */ }
   }, [events])
+
+  useEffect(() => {
+    const handleShortcut = event => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault()
+        searchInputRef.current?.focus()
+      }
+      if (event.key === 'Escape') setShowComposer(false)
+    }
+    window.addEventListener('keydown', handleShortcut)
+    return () => window.removeEventListener('keydown', handleShortcut)
+  }, [])
 
   const monthCells = useMemo(() => {
     const year = visibleMonth.getFullYear()
@@ -182,7 +195,7 @@ const Calendar = ({ windowName, setWindowState, bringWindowToFront, zIndex }) =>
               <div className="calendar-heading"><h1>{MONTHS[visibleMonth.getMonth()]} <span>{visibleMonth.getFullYear()}</span></h1><p>{monthEvents.length} {monthEvents.length === 1 ? 'event' : 'events'} this month</p></div>
             </div>
             <div className="calendar-toolbar-right">
-              <label className="calendar-search"><span>⌕</span><input value={query} onChange={event => setQuery(event.target.value)} placeholder="Search events" aria-label="Search events" />{query && <button onClick={() => setQuery('')} aria-label="Clear search">×</button>}</label>
+              <label className="calendar-search"><span>⌕</span><input ref={searchInputRef} value={query} onChange={event => setQuery(event.target.value)} placeholder="Search events" aria-label="Search events" />{query && <button onClick={() => setQuery('')} aria-label="Clear search">×</button>}</label>
               <div className="calendar-view-switch" role="group" aria-label="Calendar view">
                 <button className={view === 'month' ? 'active' : ''} onClick={() => setView('month')}>Month</button>
                 <button className={view === 'agenda' ? 'active' : ''} onClick={() => setView('agenda')}>Agenda</button>
@@ -212,7 +225,7 @@ const Calendar = ({ windowName, setWindowState, bringWindowToFront, zIndex }) =>
             <div className="calendar-agenda-view">
               <div className="agenda-view-title"><span className="agenda-date-block"><strong>{pad(selectedDateObject.getDate())}</strong><span>{MONTHS[selectedDateObject.getMonth()].slice(0, 3)}</span></span><div><h2>Agenda</h2><p>Everything you have planned</p></div></div>
               <div className="agenda-list">
-                {filteredEvents.filter(event => event.date >= dateKey(new Date(visibleMonth.getFullYear(), visibleMonth.getMonth(), 1)) && event.date <= dateKey(new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 0))).map(event => <EventRow key={event.id} event={event} onEdit={editEvent} onDelete={deleteEvent} />)}
+                {filteredEvents.filter(event => event.date.startsWith(\`${visibleMonth.getFullYear()}-${pad(visibleMonth.getMonth() + 1)}-\`)).map(event => <EventRow key={event.id} event={event} onEdit={editEvent} onDelete={deleteEvent} />)}
                 {!filteredEvents.some(event => event.date.startsWith(`${visibleMonth.getFullYear()}-${pad(visibleMonth.getMonth() + 1)}-`)) && <div className="calendar-empty">Nothing planned this month.<br /><span>A little space can be a good thing.</span></div>}
               </div>
             </div>
