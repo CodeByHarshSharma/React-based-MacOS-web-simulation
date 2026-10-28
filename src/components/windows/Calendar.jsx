@@ -133,7 +133,8 @@ const Calendar = ({ windowName, setWindowState, bringWindowToFront, zIndex }) =>
     if (!title.trim()) return
     const record = { id: editingId || makeId(), date: selectedDate, title: title.trim(), time, category, notes: notes.trim() }
     setEvents(current => editingId ? current.map(item => item.id === editingId ? record : item) : [...current, record])
-    setVisibleMonth(new Date(selectedDateObject.getFullYear(), selectedDateObject.getMonth(), 1))
+    const savedDate = fromKey(selectedDate)
+    setVisibleMonth(new Date(savedDate.getFullYear(), savedDate.getMonth(), 1))
     setShowComposer(false)
   }
   const deleteEvent = id => setEvents(current => current.filter(event => event.id !== id))
