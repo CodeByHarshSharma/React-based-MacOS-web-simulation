@@ -29,7 +29,7 @@ const Navbar = ({ openWindow }) => {
                 <img src="./nav-icons/wifi.svg" alt="WiFi"/>
             </div>
 
-            <div onClick={() => {window.open("https://calendar.google.com/", "_blank")}} className="nav-item">
+            <div onClick={() => {openWindow("calendar")}} className="nav-item">
                 <DateTime  /> 
             </div>
         </div>
